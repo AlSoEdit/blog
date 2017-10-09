@@ -3,7 +3,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-    template: `${__dirname}/views/index.html`,
+    template: path.join(__dirname, 'views', 'index.html'),
     filename: 'index.html',
     inject: 'body'
 });
@@ -28,6 +28,15 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|jp(e*)g|svg)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        name: '/views/images/[hash]-[name].[ext]'
+                    }
+                }]
             }
         ]
     },
@@ -35,6 +44,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, 'public'),
+        publicPath: '/'
     },
 
     plugins: [

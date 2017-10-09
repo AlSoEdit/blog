@@ -1,0 +1,17 @@
+
+.centered-wrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.centered-wrapper__inner
+{
+    display: flex;
+    min-width: 50%;
+}
+
+.centered-wrapper__inner--direction-column
+{
+    flex-direction: column;
+}

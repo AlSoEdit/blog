@@ -1,0 +1,11 @@
+
+.blog-post-page__button-wrapper
+{
+    align-self: flex-start;
+    margin: 30px 0;
+}
+
+.blog-post-page__button-icon
+{
+    height: 30px;
+}

@@ -1,0 +1,33 @@
+
+.blog-post__inner
+{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.blog-post__inner:hover
+{
+    background: rgba(208, 208, 208, 0.3);
+}
+
+.blog-post__title-link
+{
+    color: #242424;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 3.5rem;
+    align-self: flex-start;
+    text-decoration: none;
+}
+
+.blog-post__title-link:hover
+{
+    text-decoration: underline;
+}
+
+.blog-post__content
+{
+    font-size: 2rem;
+    text-align: left;
+}

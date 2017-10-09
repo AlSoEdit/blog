@@ -1,0 +1,10 @@
+
+.blog-feed__form-wrapper
+{
+    padding: 30px 0;
+}
+
+.blog-feed__form-wrapper--background-grey
+{
+    background: rgba(228,228,228,0.71);
+}

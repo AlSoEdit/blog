@@ -1,4 +1,27 @@
-body, p {
+body, p
+{
     margin: 0;
+    text-align: center;
+}
+
+html
+{
     font-size: 10px;
+}
+
+.main__inner
+{
+    margin-bottom: 20px;
+}
+
+.header
+{
+    background-color: black;
+    color: #fff;
+}
+
+.header__inner
+{
+    font-size: 3rem;
+    height: 40px;
 }

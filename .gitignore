@@ -7,16 +7,10 @@ logs
 npm-debug.log*
 
 # Dependency directories
-node_modules/
+node_modules
 
 # Optional npm cache directory
 .npm
-
-# Optional eslint cache
-.eslintcache
-
-# Output of 'npm pack'
-*.tgz
 
 # dotenv environment variables file
 .env

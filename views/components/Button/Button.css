@@ -1,0 +1,52 @@
+
+.button
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(208, 208, 208, 0.3);
+    font-size: 1.5rem;
+}
+
+.button:hover
+{
+    background-color: rgba(208, 208, 208, 0.7);
+}
+
+.button__items
+{
+    display: flex;
+    justify-content: center;
+    min-width: 75px;
+    padding: 5px 15px;
+    align-items: center;
+}
+
+.button__items:active
+{
+    outline: 1px solid rgba(153,153,153, 1);
+}
+
+.button__items--color-black
+{
+    background-color: #242424;
+    color: #fff;
+}
+
+.button__items--color-black:hover
+{
+    background-color: rgba(24, 24, 24, .85);
+}
+
+.button__link
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.button__btn
+{
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: unset;
+}
