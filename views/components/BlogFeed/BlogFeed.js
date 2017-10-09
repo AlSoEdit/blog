@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
 import { forms } from '../../../constants/routes';
 import { showMoreButtonText } from '../../../constants/uiText';
 
@@ -13,6 +14,7 @@ import Button from '../Button/Button';
 import './BlogFeed.css';
 
 const postToLoadCount = 3;
+const b = b_.lock('blog-feed');
 
 export default class BlogFeed extends Component {
     constructor(props) {
@@ -59,8 +61,8 @@ export default class BlogFeed extends Component {
             );
 
         return (
-            <div className="blog-feed">
-                <div className="blog-feed__form-wrapper blog-feed__form-wrapper--background-grey">
+            <div className={b()}>
+                <div className={b('form-wrapper', { background: 'grey' })}>
                     <CenteredWrapper>
                         <Form
                             onSubmit={createPost}

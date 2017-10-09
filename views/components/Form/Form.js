@@ -2,9 +2,14 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
+import { defaultSubmitText } from '../../../constants/uiText';
 
 import './Form.css';
-import Button from "../Button/Button";
+import Button from '../Button/Button';
+import Input from "../TextField/TextField";
+
+const b = b_.lock('form');
 
 export default class Form extends Component {
     constructor(props) {
@@ -40,39 +45,25 @@ export default class Form extends Component {
     render() {
         const { formSettings: { inputsSettings, submitText, title } } = this.props;
         const { inputsValues } = this.state;
-        const inputs = inputsSettings.map(s =>
-            s.isTextArea
-                ? <textarea
-                    className="form__textarea"
-                    placeholder={s.placeholder}
-                    onChange={this.handleChange}
-                    required={s.required}
-                    name={s.name}
-                    key={s.name}
-                    value={inputsValues[s.name]}
-                />
-                : <input
-                    className="form__input"
-                    type={s.type || 'text'}
-                    placeholder={s.placeholder}
-                    onChange={this.handleChange}
-                    required={s.required}
-                    name={s.name}
-                    key={s.name}
-                    value={inputsValues[s.name]}
-                />
+        const inputs = inputsSettings.map(i =>
+            <Input
+                key={i.name}
+                inputData={i}
+                handleChange={this.handleChange}
+                value={inputsValues[i.name]}
+            />
         );
 
         return (
-            <form className="form" onSubmit={this.onSubmit}>
-                <div className="form__inner">
-                    <p className="form__title">{title}</p>
+            <form className={b()} onSubmit={this.onSubmit}>
+                <div className={b('inner')}>
+                    <p className={b('title')}>{title}</p>
 
                     {inputs}
 
-                    <div className="form__button-wrapper">
+                    <div className={b('button-wrapper')}>
                         <Button
-                            buttonText={submitText || 'Submit'}
+                            buttonText={submitText || defaultSubmitText}
                             type={'submit'}
                             color={'black'}
                         />

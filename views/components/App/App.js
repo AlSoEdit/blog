@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import PropTypes from 'prop-types';
-import { headerText, pageNotFound, postDoesNotExist } from '../../../constants/uiText';
+import { headerText, pageNotFound } from '../../../constants/uiText';
 import { Redirect } from 'react-router-dom';
 
 import BlogFeed from '../BlogFeed/BlogFeed';
@@ -36,7 +36,7 @@ export default class App extends Component {
 
                                     return post
                                         ? <BlogPostPage post={post}/>
-                                        : <Redirect to={{ pathname: '/error', text: postDoesNotExist }}/>;
+                                        : <Redirect to={{ pathname: '/error' }}/>;
                                 }}
                             />
                             <Route

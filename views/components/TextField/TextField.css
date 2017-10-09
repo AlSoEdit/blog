@@ -1,0 +1,25 @@
+
+.text-field
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-field__input,
+.text-field__textarea
+{
+    padding: 3px 15px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.text-field__input
+{
+    height: 25px;
+}
+
+.text-field__textarea
+{
+    resize: none;
+    height: 100px;
+}

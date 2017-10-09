@@ -1,7 +1,5 @@
 
-.form__title,
-.form__input,
-.form__textarea
+.form__title
 {
     display: block;
     margin-bottom: 10px;
@@ -18,23 +16,6 @@
     align-self: flex-start;
     font-size: 2rem;
     font-weight: bold;
-}
-
-.form__input,
-.form__textarea
-{
-    padding: 3px 15px;
-}
-
-.form__input
-{
-    height: 25px;
-}
-
-.form__textarea
-{
-    resize: none;
-    height: 100px;
 }
 
 .form__button-wrapper

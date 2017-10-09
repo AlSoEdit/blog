@@ -2,14 +2,17 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
 
 import './CenteredWrapper.css';
+
+const b = b_.lock('centered-wrapper');
 
 export default class CenteredWrapper extends Component {
     render() {
         return (
-            <div className="centered-wrapper">
-                <div className="centered-wrapper__inner centered-wrapper__inner--direction-column">
+            <div className={b()}>
+                <div className={b('inner', { direction: 'column' })}>
                     {this.props.children}
                 </div>
             </div>

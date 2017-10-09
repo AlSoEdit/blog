@@ -2,11 +2,14 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
 
 import CenteredWrapper from '../CenteredWrapper/CenteredWrapper';
 import ButtonLink from '../Button/Button';
 
 import './Error.css';
+
+const b = b_.lock('error');
 
 export default class ErrorPage extends Component {
     render() {
@@ -14,9 +17,9 @@ export default class ErrorPage extends Component {
 
         return (
             <CenteredWrapper>
-                <div className="error">
-                    <div className="error__inner">
-                        <p className="error__text">{text}</p>
+                <div className={b()}>
+                    <div className={b('inner')}>
+                        <p className={b('text')}>{text}</p>
                         <ButtonLink buttonText={'Blog feed'} linkUrl={'/'}/>
                     </div>
                 </div>

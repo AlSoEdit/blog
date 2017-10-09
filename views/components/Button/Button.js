@@ -3,17 +3,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
 
 import './Button.css';
+
+const b = b_.lock('button');
 
 export default class Button extends Component {
     render() {
         const { buttonText, linkUrl, onClick, color, type } = this.props;
-        const buttonColorClass = `${color && ` button__items--color-${color}` || ''}`;
         const items = (
-            <div className={`button__items${buttonColorClass}`} onClick={onClick}>
+            <div className={b('items', { color })} onClick={onClick}>
                 {this.props.children}
-                <p className="button__text">{buttonText}</p>
+                <p className={b('text')}>{buttonText}</p>
             </div>
         );
 
@@ -21,10 +23,10 @@ export default class Button extends Component {
             <div className={'button'}>
                 {
                     linkUrl
-                        ? <Link className="button__link" to={linkUrl}>
+                        ? <Link className={b('link')} to={linkUrl}>
                             { items }
                         </Link>
-                        : <button className="button__btn" type={type}>
+                        : <button className={b('btn')} type={type}>
                             { items }
                         </button>
                 }

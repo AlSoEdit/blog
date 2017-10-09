@@ -3,24 +3,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import b_ from '../../../libs/b_';
 
 import './BlogPost.css';
+
+const b = b_.lock('blog-post');
 
 export default class BlogPost extends Component {
     render() {
         const { title, content, id, preview } = this.props;
-        const linkClassName = `blog-post__title-link${preview ? ' blog-post__title-link--preview' : ''}`;
 
         return (
-            <div className="blog-post">
-                <div className="blog-post__inner">
+            <div className={b()}>
+                <div className={b('inner')}>
                     <Link
-                        className={linkClassName}
+                        className={b('title-link', { preview })}
                         to={`/post/${id}`}
                     >
                         {title}
                     </Link>
-                    <p className="blog-post__content">{content}</p>
+                    <p className={b('content')}>{content}</p>
                 </div>
             </div>
         );
@@ -28,6 +30,7 @@ export default class BlogPost extends Component {
 }
 
 BlogPost.propTypes = {
+    preview: PropTypes.bool,
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired
