@@ -54,7 +54,7 @@ export default class BlogFeed extends Component {
                         ((el) => this.firstNewShownPost = el)
                     }
                 >
-                    <BlogPost {...post} />
+                    <BlogPost {...post} preview />
                 </div>
             );
 

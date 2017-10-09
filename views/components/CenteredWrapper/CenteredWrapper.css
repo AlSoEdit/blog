@@ -8,7 +8,7 @@
 .centered-wrapper__inner
 {
     display: flex;
-    min-width: 50%;
+    width: 50%;
 }
 
 .centered-wrapper__inner--direction-column

@@ -8,13 +8,14 @@ import './BlogPost.css';
 
 export default class BlogPost extends Component {
     render() {
-        const { title, content, id } = this.props;
+        const { title, content, id, preview } = this.props;
+        const linkClassName = `blog-post__title-link${preview ? ' blog-post__title-link--preview' : ''}`;
 
         return (
             <div className="blog-post">
                 <div className="blog-post__inner">
                     <Link
-                        className="blog-post__title-link"
+                        className={linkClassName}
                         to={`/post/${id}`}
                     >
                         {title}

@@ -39,10 +39,7 @@ Button.propTypes = {
     buttonText: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     linkUrl: PropTypes.string,
-    children: PropTypes.oneOf([
-        PropTypes.element,
-        PropTypes.array
-    ])
+    children: PropTypes.any
 };
 
 Button.defaultProps = {

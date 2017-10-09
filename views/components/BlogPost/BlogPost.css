@@ -15,10 +15,19 @@
 {
     color: #242424;
     display: block;
+    text-align: left;
+    max-width: 100%;
     margin-bottom: 15px;
     font-size: 3.5rem;
     align-self: flex-start;
     text-decoration: none;
+}
+
+.blog-post__title-link--preview
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .blog-post__title-link:hover
@@ -30,4 +39,11 @@
 {
     font-size: 2rem;
     text-align: left;
+}
+
+.blog-post__title-link,
+.blog-post__content
+{
+    -ms-word-break: break-all;
+    word-break: break-all;
 }

@@ -34,11 +34,11 @@ export default class Form extends Component {
         e.preventDefault();
         const { inputsValues } = this.state;
 
-        this.props.onSubmit({ inputsValues });
+        this.props.onSubmit(inputsValues);
     }
 
     render() {
-        const { onSubmit, formSettings: { inputsSettings, submitText, title } } = this.props;
+        const { formSettings: { inputsSettings, submitText, title } } = this.props;
         const { inputsValues } = this.state;
         const inputs = inputsSettings.map(s =>
             s.isTextArea
@@ -64,7 +64,7 @@ export default class Form extends Component {
         );
 
         return (
-            <form className="form" onSubmit={onSubmit}>
+            <form className="form" onSubmit={this.onSubmit}>
                 <div className="form__inner">
                     <p className="form__title">{title}</p>
 

@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import PropTypes from 'prop-types';
-import { headerText, pageNotFound } from '../../../constants/uiText';
+import { headerText, pageNotFound, postDoesNotExist } from '../../../constants/uiText';
+import { Redirect } from 'react-router-dom';
 
 import BlogFeed from '../BlogFeed/BlogFeed';
 import BlogPostPage from '../BlogPostPage/BlogPostPage';
@@ -33,7 +34,9 @@ export default class App extends Component {
                                     const { id } = props.match.params;
                                     const post = posts.filter(p => p.id === id)[0];
 
-                                    return <BlogPostPage post={post}/>;
+                                    return post
+                                        ? <BlogPostPage post={post}/>
+                                        : <Redirect to={{ pathname: '/error', text: postDoesNotExist }}/>;
                                 }}
                             />
                             <Route

@@ -2,10 +2,9 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { backButtonText, postDoesNotExist } from '../../../constants/uiText';
+import { backButtonText } from '../../../constants/uiText';
 
 import BlogPost from '../BlogPost/BlogPost';
-import { Redirect } from 'react-router-dom';
 import CenteredWrapper from '../CenteredWrapper/CenteredWrapper';
 import Button from '../Button/Button';
 
@@ -24,11 +23,7 @@ export default class BlogPostPage extends Component {
                             <img className="blog-post-page__button-icon" src={icon}/>
                         </Button>
                     </div>
-                    {
-                        post
-                            ? <BlogPost { ...post } />
-                            : <Redirect to={{ pathname: '/error', text: postDoesNotExist }}/>
-                    }
+                    <BlogPost { ...post } />
                 </CenteredWrapper>
             </div>
         );
